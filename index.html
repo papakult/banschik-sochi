@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Олег, профессиональный банщик в Сочи | Выезд и подбор бани</title>
+<meta name="description" content="Профессиональный банщик Олег. Более 20 лет опыта. Выезд в вашу баню или помощь с подбором подходящей бани в Сочи. Запись по WhatsApp.">
+<meta name="theme-color" content="#08080a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Олег, профессиональный банщик в Сочи">
+<meta property="og:description" content="Более 20 лет опыта. Выезд в вашу баню или помощь с подбором подходящей бани в Сочи.">
+<meta property="og:image" content="hero-1400.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080a;
+  --graphite:#0e0f10;
+  --graphite-2:#131415;
+  --line:rgba(215,169,120,.20);
+  --hair:rgba(239,234,227,.10);
+  --copper:#c08346;
+  --copper-lt:#dda86f;
+  --green:#7f9666;
+  --text:#efeae3;
+  --muted:#9d958b;
+  --sp:clamp(80px,12vw,168px);
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:var(--sans);font-size:17px;font-weight:300;line-height:1.7;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--copper);color:#120c05}
+
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+h1,h2,.serif{font-family:var(--serif);font-weight:300;letter-spacing:-.005em;line-height:1.05;margin:0}
+h1{font-size:clamp(40px,9vw,88px)}
+h2{font-size:clamp(32px,5.6vw,60px)}
+h3{font-family:var(--sans);font-weight:500;font-size:clamp(18px,2.1vw,21px);letter-spacing:-.01em;line-height:1.35;margin:0}
+p{margin:0}
+.muted{color:var(--muted)}
+.lbl{
+  font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--copper-lt);
+  display:inline-flex;align-items:center;gap:16px;
+}
+.lbl::before{content:"";width:40px;height:1px;background:currentColor;opacity:.55}
+section{position:relative;padding:var(--sp) 0;background:var(--bg)}
+
+/* film grain */
+body::after{
+  content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.04;
+  background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* scroll progress */
+.prog{position:fixed;top:0;left:0;height:2px;width:0;z-index:95;
+  background:linear-gradient(90deg,rgba(192,131,70,0),var(--copper),var(--copper-lt));transition:width .1s linear}
+
+/* ---------- buttons ---------- */
+.btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  min-height:60px;padding:18px 34px;border-radius:2px;overflow:hidden;
+  font-size:13.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;
+  border:1px solid transparent;transition:color .3s,border-color .3s;
+}
+.btn span{position:relative;z-index:2}
+.btn--wa{color:#140d04;border-color:var(--copper)}
+.btn--wa::before{content:"";position:absolute;inset:0;background:var(--copper);transition:transform .45s cubic-bezier(.3,.8,.3,1);transform-origin:bottom}
+.btn--wa:hover::before{background:var(--copper-lt)}
+.btn--call{color:var(--text);border-color:rgba(239,234,227,.26)}
+.btn--call::before{content:"";position:absolute;inset:0;background:var(--text);transform:scaleY(0);transform-origin:bottom;transition:transform .45s cubic-bezier(.3,.8,.3,1)}
+.btn--call:hover{color:#0b0b0c;border-color:var(--text)}
+.btn--call:hover::before{transform:scaleY(1)}
+.btn:focus-visible{outline:2px solid var(--copper-lt);outline-offset:4px}
+.actions{display:flex;flex-wrap:wrap;gap:14px}
+.actions .btn{flex:1 1 auto;min-width:210px}
+.tel-lg{
+  display:inline-block;font-family:var(--serif);font-size:clamp(24px,3vw,32px);
+  letter-spacing:.05em;text-decoration:none;color:var(--text);
+  border-bottom:1px solid var(--line);padding-bottom:4px;transition:color .3s,border-color .3s;
+}
+.tel-lg:hover{color:var(--copper-lt);border-color:var(--copper)}
+
+/* ---------- hero ---------- */
+.hero{min-height:100svh;padding:0;display:flex;align-items:flex-end;background:transparent}
+.hero__media{position:absolute;inset:0;overflow:hidden;z-index:0}
+.hero__media img,.hero__media video{
+  width:100%;height:100%;object-fit:cover;object-position:70% 50%;
+  transform:none;
+}
+@keyframes drift{from{transform:scale(1.06) translate3d(0,0,0)}to{transform:scale(1.16) translate3d(-1.5%,-1%,0)}}
+.hero__media::after{
+  content:"";position:absolute;inset:0;
+  background:
+   linear-gradient(180deg,rgba(8,8,10,.78) 0%,rgba(8,8,10,.22) 30%,rgba(8,8,10,.80) 72%,var(--bg) 100%),
+   linear-gradient(90deg,rgba(8,8,10,.90) 0%,rgba(8,8,10,.52) 46%,rgba(8,8,10,.10) 100%);
+}
+.hero__inner{position:relative;z-index:2;padding-top:clamp(130px,20vh,190px);padding-bottom:clamp(112px,14vh,132px);width:100%}
+.hero h1{margin:30px 0 28px;max-width:15ch;text-wrap:balance}
+.hero h1 .em{font-style:italic;color:var(--copper-lt)}
+.hero .lead{max-width:41ch;font-size:clamp(17px,1.9vw,20px);color:#ddd6cd}
+.hero .actions{margin-top:40px;max-width:540px}
+.hero .tel-lg{margin-top:28px}
+.scroll-hint{
+  position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;
+  font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(239,234,227,.45);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+}
+.scroll-hint i{display:block;width:1px;height:44px;background:linear-gradient(180deg,var(--copper),transparent);animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+@media(max-width:759px){.scroll-hint{display:none}}
+
+/* ---------- facts strip ---------- */
+.facts{padding:0;background:var(--bg)}
+.facts ul{list-style:none;margin:0;padding:clamp(28px,4vw,40px) 0;display:grid;gap:clamp(20px,3vw,32px);
+  border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+@media(min-width:760px){.facts ul{grid-template-columns:repeat(3,1fr)}}
+.facts li{display:flex;flex-direction:column;gap:6px}
+.facts b{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.4vw,38px);line-height:1;color:var(--text)}
+.facts small{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- section head ---------- */
+.head{display:grid;gap:22px;margin-bottom:clamp(46px,6vw,74px)}
+@media(min-width:900px){.head{grid-template-columns:.32fr .68fr;align-items:start;gap:40px}}
+.head h2{max-width:17ch;text-wrap:balance}
+
+/* ---------- steps ---------- */
+.steps{display:grid;gap:0}
+@media(min-width:860px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{padding:34px 0;border-top:1px solid var(--hair);position:relative}
+@media(min-width:860px){.step{padding:36px clamp(20px,2.6vw,36px) 46px}
+  .step:first-child{padding-left:0}.step:last-child{padding-right:0}
+  .step+.step{border-left:1px solid var(--hair)}}
+.step__n{font-family:var(--serif);font-size:44px;line-height:1;color:var(--copper);opacity:.9;display:block;margin-bottom:20px}
+.step h3{margin-bottom:12px}
+.step p{font-size:16px}
+
+/* ---------- cinema band ---------- */
+.cinema{padding:0;height:210vh;background:var(--bg)}
+.cinema__pin{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.cinema__pin video,.cinema__pin img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 50%}
+.cinema__pin::after{content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 75% 62% at 50% 50%,rgba(8,8,10,.86) 0%,rgba(8,8,10,.66) 45%,rgba(8,8,10,.42) 78%,rgba(8,8,10,.55) 100%),
+    linear-gradient(180deg,var(--bg) 0%,rgba(8,8,10,.30) 16%,rgba(8,8,10,.30) 84%,var(--bg) 100%)}
+.cinema__q{position:relative;z-index:2;width:100%;text-align:center;padding:0 clamp(20px,5vw,64px)}
+.cinema__q .lbl{justify-content:center;margin-bottom:clamp(28px,4vw,46px)}
+.cinema__words{display:flex;flex-direction:column;align-items:center;gap:clamp(4px,1vw,12px);
+  font-family:var(--serif);font-weight:300;font-size:clamp(46px,11vw,132px);line-height:.98;letter-spacing:-.01em}
+.cinema__words span{display:block}
+.cinema__words span:nth-child(2){color:var(--copper-lt)}
+.cinema__prov{margin-top:clamp(30px,4vw,46px);display:flex;flex-direction:column;align-items:center;gap:12px}
+.cinema__prov em{font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(20px,2.6vw,30px);line-height:1.3;color:var(--copper-lt);letter-spacing:.01em}
+.cinema__prov small{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+.cinema__sub{margin-top:clamp(18px,2.4vw,26px);font-size:clamp(14px,1.5vw,16px);letter-spacing:.02em;color:#a9a29a}
+.c-rv{opacity:0;transform:translateY(26px);filter:blur(6px);
+  transition:opacity 1.1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1),filter 1.1s ease}
+.c-rv.in{opacity:1;transform:none;filter:none}
+.cinema__words span:nth-child(1){transition-delay:.10s}
+.cinema__words span:nth-child(2){transition-delay:.28s}
+.cinema__words span:nth-child(3){transition-delay:.46s}
+.cinema__prov{transition-delay:.66s}
+.cinema__sub{transition-delay:.82s}
+
+/* ---------- about ---------- */
+.about{background:var(--graphite)}
+.about__grid{display:grid;gap:clamp(38px,5vw,72px);align-items:center}
+@media(min-width:960px){.about__grid{grid-template-columns:1fr 1fr}}
+.about h2{margin-bottom:28px;max-width:15ch}
+.about p+p{margin-top:22px}
+.about .note{margin-top:32px;padding-left:22px;border-left:1px solid var(--green);color:var(--muted);font-size:16px}
+.figure{position:relative;overflow:hidden;border-radius:2px;background:#1a1512}
+.figure img{width:100%;height:auto;object-fit:cover;aspect-ratio:4/3;transform:scale(1.02);transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.figure:hover img{transform:scale(1.06)}
+.figure::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 120px 20px rgba(8,8,10,.55);pointer-events:none}
+
+/* ---------- variants ---------- */
+.cards{display:grid;gap:0;border-top:1px solid var(--hair)}
+@media(min-width:860px){.cards{grid-template-columns:1fr 1fr}}
+.card{position:relative;padding:clamp(38px,4.6vw,64px) 0;border-bottom:1px solid var(--hair);transition:background .5s}
+@media(min-width:860px){.card{padding:clamp(44px,4vw,68px) clamp(28px,3.4vw,52px)}
+  .card:first-child{padding-left:0}.card:last-child{padding-right:0;border-left:1px solid var(--hair)}}
+.card__n{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--copper);display:block;margin-bottom:26px}
+.card:last-child .card__n{color:var(--green)}
+.card h3{margin-bottom:14px;font-size:clamp(21px,2.6vw,26px)}
+.card p{max-width:34ch}
+
+/* ---------- cta ---------- */
+.cta{background:var(--graphite-2);text-align:center}
+.cta h2{max-width:16ch;margin:26px auto 22px}
+.cta p{max-width:46ch;margin:0 auto;color:var(--muted)}
+.cta .actions{margin:44px auto 0;max-width:560px;justify-content:center}
+.cta .or{margin-top:30px;font-size:15px;color:var(--muted)}
+.cta .or a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--line)}
+
+footer{padding:60px 0 72px;border-top:1px solid var(--hair);background:var(--bg)}
+footer .row{display:flex;flex-wrap:wrap;gap:16px 40px;align-items:baseline;justify-content:space-between}
+footer .name{font-family:var(--serif);font-size:22px;color:var(--text)}
+footer a{color:var(--muted);text-decoration:none;transition:color .3s}
+footer a:hover{color:var(--copper-lt)}
+
+/* ---------- sticky mobile bar ---------- */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;gap:10px;
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(8,8,10,.96);border-top:1px solid var(--hair)}
+.bar .btn{flex:1;min-height:54px;min-width:0;padding:15px 10px;font-size:12.5px;letter-spacing:.12em}
+.bar .btn--wa::before{transform:none}
+@media(max-width:859px){.bar{display:flex}body{padding-bottom:86px}
+  .hero__media img,.hero__media video{object-position:76% 50%}
+  .cinema{height:180vh}.cinema__pin video,.cinema__pin img{object-position:62% 50%}}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(22px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv-d1{transition-delay:.09s}.rv-d2{transition-delay:.18s}.rv-d3{transition-delay:.27s}
+.mask{clip-path:inset(0 0 100% 0);transition:clip-path 1.15s cubic-bezier(.2,.7,.2,1)}
+.mask.in{clip-path:inset(0 0 0 0)}
+@media(prefers-reduced-motion:reduce){
+  .rv,.mask,.c-rv{opacity:1;transform:none;clip-path:none;filter:none;transition:none}
+  .hero__media img,.hero__media video{animation:none;transform:scale(1.02)}
+  .scroll-hint i{animation:none}
+  html{scroll-behavior:auto}
+}
+@media(max-width:560px){
+  .lbl{font-size:10px;letter-spacing:.2em;gap:12px}
+  .lbl::before{width:26px}
+  .hero .lead{font-size:16.5px}
+}
+
+/* ---------- world baths rows ---------- */
+.rows{display:grid;gap:clamp(56px,7vw,96px)}
+.row{display:grid;gap:clamp(22px,3.4vw,52px);align-items:center}
+@media(min-width:900px){
+  .row{grid-template-columns:1fr 1fr}
+  .row:nth-child(even) .row__txt{order:2}
+}
+.row__img{position:relative;overflow:hidden;border-radius:2px;background:#141110}
+.row__img img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;transform:scale(1.02);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.row:hover .row__img img{transform:scale(1.06)}
+.row__img::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 110px 18px rgba(8,8,10,.5);pointer-events:none}
+.row__n{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--copper);display:block;margin-bottom:18px}
+.row h3{font-family:var(--serif);font-weight:300;font-size:clamp(26px,3.6vw,40px);line-height:1.12;margin-bottom:14px}
+.row__meta{margin-top:20px;padding-top:16px;border-top:1px solid var(--hair);
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- benefits ---------- */
+.ben{background:var(--graphite)}
+.ben__grid{display:grid;gap:0;border-top:1px solid var(--hair);margin-top:clamp(36px,5vw,56px)}
+@media(min-width:820px){.ben__grid{grid-template-columns:1fr 1fr}}
+.ben__i{padding:clamp(30px,3.6vw,46px) 0;border-bottom:1px solid var(--hair)}
+@media(min-width:820px){
+  .ben__i{padding:clamp(34px,3.4vw,48px) clamp(26px,3vw,46px)}
+  .ben__i:nth-child(odd){padding-left:0}
+  .ben__i:nth-child(even){padding-right:0;border-left:1px solid var(--hair)}
+}
+.ben__i span{font-family:var(--serif);font-size:30px;line-height:1;color:var(--copper);display:block;margin-bottom:16px}
+.ben__i h3{margin-bottom:10px}
+.ben__i p{font-size:16px}
+.ben__note{margin-top:clamp(34px,4vw,48px);padding:24px 26px;border:1px solid var(--hair);border-radius:2px;
+  font-size:14.5px;color:var(--muted);max-width:70ch}
+.ben__band{margin-top:clamp(40px,5vw,64px);overflow:hidden;border-radius:2px;position:relative}
+.ben__band img{width:100%;height:auto;aspect-ratio:21/9;object-fit:cover}
+.ben__band::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 140px 26px rgba(8,8,10,.6)}
+
+/* ---------- mid cta strip ---------- */
+.strip{padding:clamp(44px,5vw,64px) 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);background:var(--bg)}
+.strip .in{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between}
+.strip p{font-family:var(--serif);font-size:clamp(22px,3vw,32px);line-height:1.2;max-width:22ch}
+.strip a.link{font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;
+  color:var(--copper-lt);border-bottom:1px solid var(--line);padding-bottom:6px;white-space:nowrap;transition:color .3s,border-color .3s}
+.strip a.link:hover{color:var(--text);border-color:var(--text)}
+
+/* ---------- sticky header ---------- */
+:target,[id^="s-"]{scroll-margin-top:96px}
+.hdr{position:fixed;top:0;left:0;right:0;z-index:70;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:clamp(14px,2vw,20px) clamp(20px,5vw,64px);
+  transition:background .45s ease,border-color .45s ease,transform .45s cubic-bezier(.2,.7,.2,1),padding .45s ease;
+  border-bottom:1px solid transparent;background:transparent}
+.hdr.solid{background:rgba(8,8,10,.88);backdrop-filter:blur(14px) saturate(1.1);
+  -webkit-backdrop-filter:blur(14px) saturate(1.1);border-bottom-color:var(--hair);
+  padding-top:clamp(10px,1.4vw,14px);padding-bottom:clamp(10px,1.4vw,14px)}
+.hdr.up{transform:translateY(-102%)}
+.hdr__brand{display:flex;align-items:baseline;gap:12px;text-decoration:none;color:var(--text);white-space:nowrap}
+.hdr__brand b{font-family:var(--serif);font-weight:400;font-size:clamp(19px,2.2vw,24px);letter-spacing:.01em}
+.hdr__brand i{font-style:normal;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:640px){.hdr__brand i{display:none}}
+.hdr__right{display:flex;align-items:center;gap:clamp(14px,2.4vw,28px)}
+.hdr__tel{font-size:14px;letter-spacing:.04em;text-decoration:none;color:var(--text);opacity:.9;transition:color .3s}
+.hdr__tel:hover{color:var(--copper-lt)}
+@media(max-width:860px){.hdr__tel{display:none}}
+.burger{display:inline-flex;flex-direction:column;justify-content:center;gap:6px;
+  width:46px;height:46px;padding:0 10px;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.burger i{display:block;height:1px;background:var(--text);transition:transform .4s cubic-bezier(.2,.7,.2,1),opacity .25s,width .4s;width:26px}
+.burger i:nth-child(2){width:18px;margin-left:auto}
+.burger:hover i:nth-child(2){width:26px}
+.burger:focus-visible{outline:1px solid var(--copper-lt);outline-offset:2px}
+body.nav-open .burger i:nth-child(1){transform:translateY(3.5px) rotate(45deg)}
+body.nav-open .burger i:nth-child(2){opacity:0}
+body.nav-open .burger i:nth-child(3){transform:translateY(-3.5px) rotate(-45deg);width:26px}
+
+/* ---------- overlay menu ---------- */
+.menu{position:fixed;inset:0;z-index:69;background:var(--bg);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(96px,14vh,140px) clamp(20px,5vw,64px) clamp(28px,5vh,56px);
+  opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s;overflow-y:auto}
+body.nav-open .menu{opacity:1;visibility:visible}
+body.nav-open{overflow:hidden}
+.menu nav{display:grid;gap:clamp(2px,1vw,6px);max-width:1240px;width:100%;margin:0 auto}
+.menu a.mi{display:flex;align-items:baseline;gap:clamp(14px,2.4vw,28px);text-decoration:none;color:var(--text);
+  padding:clamp(11px,1.5vw,15px) 0;border-bottom:1px solid var(--hair);
+  opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1),color .3s}
+body.nav-open .menu a.mi{opacity:1;transform:none}
+.menu a.mi em{font-style:normal;font-size:11px;letter-spacing:.24em;color:var(--copper);min-width:34px}
+.menu a.mi b{font-family:var(--serif);font-weight:300;font-size:clamp(28px,5.4vw,54px);line-height:1.1;transition:color .3s}
+.menu a.mi:hover b{color:var(--copper-lt)}
+.menu__foot{max-width:1240px;width:100%;margin:clamp(34px,5vh,52px) auto 0;display:flex;flex-wrap:wrap;gap:14px 32px;align-items:center;justify-content:space-between}
+.menu__foot .tel-lg{margin:0;font-size:clamp(22px,3vw,30px)}
+.menu__foot .btn{min-height:54px;padding:16px 30px}
+body.nav-open .bar{transform:translateY(110%)}
+.bar{transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+@media(max-width:640px){
+  .menu{justify-content:flex-start;padding-top:clamp(88px,12vh,110px)}
+  .menu__foot{flex-direction:column;align-items:flex-start;gap:18px}
+  .menu__foot .btn{width:100%}
+}
+
+/* cursor */
+.cur{position:fixed;top:0;left:0;width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid var(--copper);
+  border-radius:50%;z-index:100;pointer-events:none;opacity:0;transition:opacity .3s,transform .25s;mix-blend-mode:screen}
+@media(hover:none),(max-width:859px){.cur{display:none}}
+</style>
+</head>
+<body>
+<header class="hdr" id="hdr">
+  <a class="hdr__brand" href="#top"><b>Олег</b><i>Банщик · Сочи</i></a>
+  <div class="hdr__right">
+    <a class="hdr__tel" href="tel:+79189496021">+7 (918) 949-60-21</a>
+    <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu">
+      <i></i><i></i><i></i>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Разделы страницы">
+  <nav>
+      <a class="mi" href="#s-format"><em>01</em><b>Как это работает</b></a>
+      <a class="mi" href="#s-world"><em>02</em><b>Бани народов мира</b></a>
+      <a class="mi" href="#s-ben"><em>03</em><b>Что даёт парение</b></a>
+      <a class="mi" href="#s-about"><em>04</em><b>Об Олеге</b></a>
+      <a class="mi" href="#s-variants"><em>05</em><b>Два варианта работы</b></a>
+      <a class="mi" href="#s-cta"><em>06</em><b>Записаться</b></a>
+  </nav>
+  <div class="menu__foot">
+    <a class="tel-lg" href="tel:+79189496021">+7 (918) 949-60-21</a>
+    <a class="btn btn--wa" href="https://wa.me/79189496021?text=%D0%9E%D0%BB%D0%B5%D0%B3%2C%20%D0%B7%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%20%D0%BF%D0%B0%D1%80%D0%B5%D0%BD%D0%B8%D1%8E." target="_blank" rel="noopener"><span>Написать в WhatsApp</span></a>
+  </div>
+</div>
+
+<div class="prog" id="prog" aria-hidden="true"></div>
+<div class="cur" id="cur" aria-hidden="true"></div>
+
+<header class="hero" id="top">
+  <div class="hero__media">
+    <img src="hero-1400.webp"
+         srcset="hero-900.webp 900w, hero-1400.webp 1400w"
+         sizes="100vw" alt="Интерьер русской бани: каменная печь с огнём, медные тазы, дубовые веники и пар"
+         fetchpriority="high" decoding="async">
+  </div>
+  <div class="wrap hero__inner">
+    <p class="lbl rv in">Профессиональный банщик в Сочи</p>
+    <h1 class="rv rv-d1 in">Олег. <span class="em">Правильное парение</span></h1>
+    <p class="lead rv rv-d2 in">Приеду в выбранную вами баню или помогу найти подходящее место под вашу компанию и пожелания.</p>
+    <div class="actions rv rv-d3 in">
+      <a class="btn btn--wa" href="https://wa.me/79189496021?text=%D0%9E%D0%BB%D0%B5%D0%B3%2C%20%D0%B7%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%20%D0%BF%D0%B0%D1%80%D0%B5%D0%BD%D0%B8%D1%8E." target="_blank" rel="noopener"><span>Написать в WhatsApp</span></a>
+      <a class="btn btn--call" href="tel:+79189496021"><span>Позвонить Олегу</span></a>
+    </div>
+    <div><a class="tel-lg" href="tel:+79189496021">+7 (918) 949-60-21</a></div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span>Листайте</span><i></i></div>
+</header>
+
+<main>
+  <section class="facts" aria-label="Коротко">
+    <div class="wrap">
+      <ul>
+        <li class="rv"><b>Более 20 лет</b><small>Опыт в банном деле</small></li>
+        <li class="rv rv-d1"><b>Сочи</b><small>И ближайшие районы</small></li>
+        <li class="rv rv-d2"><b>Выезд и подбор</b><small>Ваша баня или поможем найти</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="s-format" aria-labelledby="format">
+    <div class="wrap">
+      <div class="head">
+        <p class="lbl rv">Как это работает</p>
+        <h2 id="format" class="rv rv-d1">Вам остается выбрать день</h2>
+      </div>
+      <div class="steps">
+        <div class="step rv"><span class="step__n">01</span><h3>Пишете Олегу</h3><p class="muted">Расскажите, сколько будет гостей, где вы находитесь и какой отдых планируете.</p></div>
+        <div class="step rv rv-d1"><span class="step__n">02</span><h3>Выбираете баню</h3><p class="muted">Олег приедет в вашу баню. Если места пока нет, поможет подобрать подходящий вариант.</p></div>
+        <div class="step rv rv-d2"><span class="step__n">03</span><h3>Отдыхаете</h3><p class="muted">Олег заранее согласует детали и проведет парение с учетом ваших пожеланий.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cinema" aria-label="Заставка">
+    <div class="cinema__pin">
+      <img src="band-1400.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="cinema__q">
+        <p class="lbl c-rv">Ритуал</p>
+        <p class="cinema__words" aria-label="Жар. Пар. Тишина.">
+          <span class="c-rv">Жар.</span><span class="c-rv">Пар.</span><span class="c-rv">Тишина.</span>
+        </p>
+        <p class="cinema__prov c-rv"><em>«Баня парит, баня правит»</em><small>Русская пословица</small></p>
+        <p class="cinema__sub c-rv">Остальное берет на себя Олег</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="s-about" aria-labelledby="about">
+    <div class="wrap about__grid">
+      <div>
+        <p class="lbl rv">Об Олеге</p>
+        <h2 id="about" class="rv rv-d1" style="margin-top:22px">Банщик, которому можно доверить отдых</h2>
+        <p class="muted rv rv-d2">Олег занимается банным делом более 20 лет. Он помогает подготовить понятный сценарий отдыха, учитывает пожелания гостей и спокойно ведет весь процесс от первого сообщения до парения.</p>
+        <p class="note rv rv-d3">Можно пригласить Олега в уже выбранную баню или обратиться за помощью с поиском подходящего места в Сочи.</p>
+      </div>
+      <div class="figure mask">
+        <img src="venik2-1000.webp"
+             sizes="(min-width:960px) 46vw, 92vw"
+             alt="Дубовый веник запаривается в медном тазу, поднимается пар"
+             loading="lazy" decoding="async" width="1000" height="667">
+      </div>
+    </div>
+  </section>
+
+
+  <section id="s-world" aria-labelledby="world">
+    <div class="wrap">
+      <div class="head">
+        <p class="lbl rv">Традиции</p>
+        <h2 id="world" class="rv rv-d1">Бани народов мира</h2>
+      </div>
+      <div class="rows">
+      <article class="row rv">
+        <div class="row__txt">
+          <span class="row__n">01</span>
+          <h3>Русская баня</h3>
+          <p class="muted" style="margin-bottom:10px;color:var(--copper-lt);font-size:15px">Влажный пар и веник</p>
+          <p class="muted">Главное отличие русской бани — влажный пар и веник. Температура держится примерно на 60–70 °C, а влажность высокая, поэтому жар ощущается мягче и глубже, чем сухой. Парятся в несколько заходов, между ними обязательно отдыхают.</p>
+          <p class="row__meta">Россия · влажный пар · 60–70 °C</p>
+        </div>
+        <div class="row__img"><img src="ru-1000.webp" sizes="(min-width:900px) 46vw, 92vw" alt="Интерьер русской бани с каменной печью и вениками" loading="lazy" decoding="async" width="1000" height="667"></div>
+      </article>
+      <article class="row rv">
+        <div class="row__txt">
+          <span class="row__n">02</span>
+          <h3>Финская сауна</h3>
+          <p class="muted" style="margin-bottom:10px;color:var(--copper-lt);font-size:15px">Сухой жар и тишина</p>
+          <p class="muted">В сауне всё наоборот: 80–100 °C при очень низкой влажности. Веником не работают, воду на камни подают понемногу. Финская традиция — молчание и неспешность: сауна считается местом, где не решают дела.</p>
+          <p class="row__meta">Финляндия · сухой жар · 80–100 °C</p>
+        </div>
+        <div class="row__img"><img src="fi-1000.webp" sizes="(min-width:900px) 46vw, 92vw" alt="Интерьер финской сауны с каменкой" loading="lazy" decoding="async" width="1000" height="667"></div>
+      </article>
+      <article class="row rv">
+        <div class="row__txt">
+          <span class="row__n">03</span>
+          <h3>Турецкий хаммам</h3>
+          <p class="muted" style="margin-bottom:10px;color:var(--copper-lt);font-size:15px">Тёплый камень и пена</p>
+          <p class="muted">Хаммам мягче всех: около 40–50 °C при почти стопроцентной влажности. Основное действие происходит не в пару, а на подогретой мраморной плите — там мыльная пена и растирание. Такой формат легче переносится и длится дольше.</p>
+          <p class="row__meta">Турция · пар · 40–50 °C</p>
+        </div>
+        <div class="row__img"><img src="tr-1000.webp" sizes="(min-width:900px) 46vw, 92vw" alt="Интерьер турецкого хаммама с мраморной плитой" loading="lazy" decoding="async" width="1000" height="667"></div>
+      </article>
+      <article class="row rv">
+        <div class="row__txt">
+          <span class="row__n">04</span>
+          <h3>Римские термы</h3>
+          <p class="muted" style="margin-bottom:10px;color:var(--copper-lt);font-size:15px">Путь через залы</p>
+          <p class="muted">В термах не сидели в одном помещении, а шли по кругу: тёплый зал, горячий, затем холодный бассейн. Отсюда пришла сама идея контраста, которой пользуются до сих пор. Термы были ещё и местом общения — за баней проводили половину дня.</p>
+          <p class="row__meta">Древний Рим · контраст · залы</p>
+        </div>
+        <div class="row__img"><img src="rome-1000.webp" sizes="(min-width:900px) 46vw, 92vw" alt="Зал древнеримских терм с бассейном" loading="lazy" decoding="async" width="1000" height="667"></div>
+      </article>
+      <article class="row rv">
+        <div class="row__txt">
+          <span class="row__n">05</span>
+          <h3>Японское онсэн</h3>
+          <p class="muted" style="margin-bottom:10px;color:var(--copper-lt);font-size:15px">Горячая вода вместо пара</p>
+          <p class="muted">В Японии парения в нашем понимании нет: тело моют заранее, а потом погружаются в воду источника температурой около 40 °C. Смысл тот же — прогреться и замедлиться, только вместо пара горячая вода и тишина.</p>
+          <p class="row__meta">Япония · вода · около 40 °C</p>
+        </div>
+        <div class="row__img"><img src="jp-1000.webp" sizes="(min-width:900px) 46vw, 92vw" alt="Японская купель онсэн с горячей водой и паром" loading="lazy" decoding="async" width="1000" height="667"></div>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div class="wrap in">
+      <p class="rv">Не уверены, какой формат подойдёт вашей компании?</p>
+      <a class="link rv rv-d1" href="https://wa.me/79189496021?text=%D0%9E%D0%BB%D0%B5%D0%B3%2C%20%D0%B7%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%20%D0%BF%D0%B0%D1%80%D0%B5%D0%BD%D0%B8%D1%8E." target="_blank" rel="noopener">Спросить Олега в WhatsApp</a>
+    </div>
+  </section>
+
+  <section class="ben" id="s-ben" aria-labelledby="ben">
+    <div class="wrap">
+      <div class="head">
+        <p class="lbl rv">Зачем это нужно</p>
+        <h2 id="ben" class="rv rv-d1">Что даёт парение</h2>
+      </div>
+      <div class="ben__grid">
+        <div class="ben__i rv"><span>01</span><h3>Сосуды и пульс</h3><p class="muted">На жаре сосуды расширяются, пульс поднимается примерно как при спокойной ходьбе, а после выхода из парной тело переходит в глубокое расслабление. Именно этот перепад люди и называют «отпустило».</p></div>
+        <div class="ben__i rv"><span>02</span><h3>Жар и прохлада</h3><p class="muted">Заход в парную и последующее охлаждение — купель, душ, воздух — работают в паре. Контраст бодрит сильнее самого жара, поэтому его дозируют и никогда не делают через силу.</p></div>
+        <div class="ben__i rv"><span>03</span><h3>Не для красоты</h3><p class="muted">Веник — это работа с телом: он гонит горячий воздух к коже, прогревает мышцы и спину после нагрузки, а лист отдаёт запах. От того, как банщик им работает, зависит почти всё ощущение от парения.</p></div>
+        <div class="ben__i rv"><span>04</span><h3>Сон и голова</h3><p class="muted">Час без телефона в темноте и тепле обычно отражается на сне в ту же ночь. Многие ходят в баню именно за этим — не за температурой, а за паузой.</p></div>
+      </div>
+      <p class="ben__note rv">Баня — это отдых, а не лечение. Крупные наблюдения за любителями сауны в Финляндии показывают связь регулярных посещений с лучшими показателями сердечно-сосудистого здоровья, но это статистика, а не обещание результата. При хронических заболеваниях, беременности, повышенном давлении или после операций сначала спросите врача.</p>
+      <div class="ben__band mask"><img src="night-1000.webp" sizes="100vw" alt="Деревянная баня зимней ночью, тёплый свет в окне и дым из трубы" loading="lazy" decoding="async" width="1000" height="667"></div>
+    </div>
+  </section>
+
+  <section id="s-variants" aria-labelledby="variants">
+    <div class="wrap">
+      <div class="head">
+        <p class="lbl rv">Формат</p>
+        <h2 id="variants" class="rv rv-d1">Два варианта работы</h2>
+      </div>
+      <div class="cards">
+        <article class="card rv">
+          <span class="card__n">Вариант 01</span>
+          <h3>Выезд в вашу баню</h3>
+          <p class="muted">Если место уже забронировано, согласуем время, количество гостей и формат парения.</p>
+        </article>
+        <article class="card rv rv-d1">
+          <span class="card__n">Вариант 02</span>
+          <h3>Помощь с выбором бани</h3>
+          <p class="muted">Если место еще не выбрано, Олег поможет найти оптимальный вариант под ваши пожелания и бюджет.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="s-cta" aria-labelledby="cta">
+    <div class="wrap">
+      <p class="lbl rv" style="justify-content:center">Запись</p>
+      <h2 id="cta" class="rv rv-d1">Напишите Олегу и обсудите ваш отдых</h2>
+      <p class="rv rv-d2">Укажите желаемую дату, количество гостей и сообщите, выбрана ли уже баня. Олег ответит и предложит подходящий вариант.</p>
+      <div class="actions rv rv-d3">
+        <a class="btn btn--wa" href="https://wa.me/79189496021?text=%D0%9E%D0%BB%D0%B5%D0%B3%2C%20%D0%B7%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%20%D0%BF%D0%B0%D1%80%D0%B5%D0%BD%D0%B8%D1%8E." target="_blank" rel="noopener"><span>Обсудить в WhatsApp</span></a>
+        <a class="btn btn--call" href="tel:+79189496021"><span>Позвонить</span></a>
+      </div>
+      <p class="or rv">Или позвоните: <a href="tel:+79189496021">+7 (918) 949-60-21</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <p class="name">Олег, профессиональный банщик в Сочи</p>
+    <p><a href="tel:+79189496021">+7 (918) 949-60-21</a></p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Быстрая связь">
+  <a class="btn btn--call" href="tel:+79189496021"><span>Позвонить</span></a>
+  <a class="btn btn--wa" href="https://wa.me/79189496021?text=%D0%9E%D0%BB%D0%B5%D0%B3%2C%20%D0%B7%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%20%D0%BF%D0%B0%D1%80%D0%B5%D0%BD%D0%B8%D1%8E." target="_blank" rel="noopener"><span>WhatsApp</span></a>
+</nav>
+
+<script>
+(function(){
+  var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.rv:not(.in), .mask, .c-rv');
+  if(!('IntersectionObserver' in window) || rm){
+    els.forEach(function(e){e.classList.add('in')});
+  } else {
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -10% 0px'});
+    els.forEach(function(e){io.observe(e)});
+  }
+  var hdr=document.getElementById('hdr'), burger=document.getElementById('burger'), menu=document.getElementById('menu'), last=0;
+  function setMenu(open){
+    document.body.classList.toggle('nav-open',open);
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+    if(open){ hdr.classList.remove('up');
+      menu.querySelectorAll('a.mi').forEach(function(a,i){a.style.transitionDelay=(0.06+i*0.055)+'s'}); }
+    else { menu.querySelectorAll('a.mi').forEach(function(a){a.style.transitionDelay='0s'}); }
+  }
+  burger.addEventListener('click',function(){ setMenu(!document.body.classList.contains('nav-open')); });
+  menu.addEventListener('click',function(e){ if(e.target.closest('a')) setMenu(false); });
+  addEventListener('keydown',function(e){ if(e.key==='Escape') setMenu(false); });
+  addEventListener('scroll',function(){
+    var y=scrollY;
+    hdr.classList.toggle('solid', y>40);
+    if(!document.body.classList.contains('nav-open')) hdr.classList.toggle('up', y>last && y>560);
+    last=y;
+  },{passive:true});
+  var prog = document.getElementById('prog'), tick=false;
+  function upd(){
+    var h = document.documentElement.scrollHeight - innerHeight;
+    prog.style.width = (h>0 ? (scrollY/h*100) : 0) + '%';
+    tick = false;
+  }
+  addEventListener('scroll', function(){ if(!tick){ tick=true; requestAnimationFrame(upd); } }, {passive:true});
+  upd();
+
+  if(matchMedia('(hover:hover)').matches && !rm){
+    var cur = document.getElementById('cur'), x=0,y=0,cx=0,cy=0,on=false;
+    addEventListener('mousemove', function(e){ x=e.clientX; y=e.clientY; if(!on){on=true;cur.style.opacity=.75;cx=x;cy=y;} }, {passive:true});
+    (function loop(){ cx+=(x-cx)*.16; cy+=(y-cy)*.16;
+      cur.style.transform='translate3d('+cx+'px,'+cy+'px,0)'; requestAnimationFrame(loop); })();
+    document.querySelectorAll('a,button').forEach(function(a){
+      a.addEventListener('mouseenter',function(){cur.style.transform+=' scale(1.9)';cur.style.opacity=.35});
+      a.addEventListener('mouseleave',function(){cur.style.opacity=.75});
+    });
+  }
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Олег, профессиональный банщик","description":"Профессиональный банщик Олег. Более 20 лет опыта. Выезд в вашу баню или помощь с подбором подходящей бани в Сочи.","telephone":"+79189496021","areaServed":{"@type":"City","name":"Сочи"},"address":{"@type":"PostalAddress","addressLocality":"Сочи","addressCountry":"RU"}}
+</script>
+</body>
+</html>
