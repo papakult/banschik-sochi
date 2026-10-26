@@ -1,0 +1,143 @@
+/* A quieter finish for the editorial site. */
+.film{background-position:center;background-size:cover;background-color:#10372e}
+.banya-cover-film{background-position:58% center}
+.banya-cover-film video{object-position:58% center}
+.banya-cover-note{display:block;max-width:510px;margin-top:20px;color:#d9e4da;font-size:11px;line-height:1.55;letter-spacing:.02em}
+
+.button,.header-request{position:relative;isolation:isolate;overflow:hidden;clip-path:polygon(0 0,calc(100% - 11px) 0,100% 11px,100% 100%,11px 100%,0 calc(100% - 11px));border-radius:0!important;transition:transform .25s ease,background .25s ease,box-shadow .25s ease!important}
+.button{min-height:54px;box-shadow:inset 0 0 0 1px rgba(215,199,152,.62),inset 0 0 0 5px rgba(255,255,255,.045)}
+.button.dark{background:linear-gradient(135deg,#0e3d31,#18513d 57%,#0d342b);color:#f3f1e6}
+.button.dark:hover{background:linear-gradient(135deg,#18513d,#226a4e 57%,#134536)}
+.button.ivory{background:linear-gradient(135deg,#f6f1e5,#e8dfcb 70%,#e6d8b8);color:#163b2d;box-shadow:inset 0 0 0 1px #d9cba9,inset 0 0 0 5px rgba(255,255,255,.35)}
+.button:hover{filter:none;transform:translateY(-2px);box-shadow:inset 0 0 0 1px #e3d39e,0 14px 28px rgba(8,43,33,.14)}
+.button:focus-visible,.header-request:focus-visible,.hotel-collection-card:focus-visible{outline:3px solid #b08d4d;outline-offset:4px}
+.header-request{display:inline-flex;align-items:center;justify-content:center;min-height:39px;border:1px solid #a8bea8;padding:0 15px;color:#123e30;background:rgba(248,249,239,.7);font-size:11px}
+.header-request:hover{background:#e5ecdf}
+.reveal-ready .reveal-letter{opacity:.85!important;transform:translateY(.06em)!important}
+.reveal-visible .reveal-letter{opacity:1!important;transform:none!important}
+
+.hotel-collection{display:block;padding-bottom:125px}
+.hotel-collection-card,.hotel-collection-card:nth-child(-n+2){display:grid;grid-template-columns:minmax(0,1.16fr) minmax(350px,.84fr);gap:0;align-items:stretch;min-height:550px;margin:0;padding:29px 0 42px;border-top:1px solid var(--ed-line);color:var(--ed-ink)}
+.hotel-collection-photo,.hotel-collection-card:nth-child(-n+2) .hotel-collection-photo{height:550px;background:#103b2f}
+.hotel-collection-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.84)}
+.hotel-collection-card:nth-child(even) .hotel-collection-photo{grid-column:2;grid-row:1}
+.hotel-collection-card:nth-child(even) .hotel-collection-copy{grid-column:1;grid-row:1;padding-left:0;padding-right:clamp(30px,6vw,105px)}
+.hotel-collection-copy{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;min-width:0;padding:30px clamp(30px,6vw,105px)}
+.hotel-collection-copy small{font-size:11px;color:#2d7455}
+.hotel-collection-copy h2{max-width:640px;margin:24px 0 20px;font-size:clamp(49px,5.2vw,89px);line-height:1.04;overflow-wrap:anywhere}
+.hotel-collection-copy .hotel-card-angle{font-family:'Golos Text',Arial,sans-serif;font-size:clamp(21px,2vw,30px);line-height:1.3;color:#176547;margin:0 0 16px;min-height:0}
+.hotel-collection-copy p:not(.hotel-card-angle){font-size:15px;line-height:1.72;min-height:0;margin:0 0 25px}
+.hotel-collection-copy .editorial-link{margin-top:4px}
+.hotel-card-source{display:block;margin-top:28px;font-size:9px;letter-spacing:.14em;color:#63806e}
+.hotel-collection-card:hover .hotel-collection-photo img{transform:scale(1.018)}
+
+.request-page .request-hero{background:linear-gradient(120deg,#092d26 0%,#164838 58%,#10372e 100%)}
+.request-page .request-hero .wrap{position:relative}
+.request-page .request-hero .wrap::after{content:"";position:absolute;right:4vw;top:0;width:min(27vw,380px);height:100%;pointer-events:none;background:radial-gradient(ellipse at center,rgba(216,201,154,.16),transparent 65%)}
+.request-page .request-aside h2{max-width:560px}
+.request-form .request-audience{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.request-form .request-audience legend{grid-column:1/-1}
+.request-form .request-audience .choice{min-height:66px;background:#e2e9df;border:1px solid #b8c9bb;color:#153c2f;font-size:14px}
+.request-form .request-audience input[type=radio]{width:18px;height:18px;flex:none;margin:0;padding:0;accent-color:#1f6147}
+.request-form .request-audience .choice:has(input:checked){background:#d0dfd1;border-color:#3c7659;box-shadow:inset 0 0 0 1px #3c7659}
+.request-form input:focus-visible,.request-form select:focus-visible,.request-form textarea:focus-visible{outline:2px solid #2a7653;outline-offset:2px}
+
+@media(max-width:900px){
+ .hotel-collection-card,.hotel-collection-card:nth-child(-n+2){display:block;min-height:0;padding:22px 0 45px}
+ .hotel-collection-card:nth-child(even) .hotel-collection-photo,.hotel-collection-card:nth-child(even) .hotel-collection-copy{grid-column:auto;grid-row:auto}
+ .hotel-collection-photo,.hotel-collection-card:nth-child(-n+2) .hotel-collection-photo{height:clamp(370px,64vw,570px)}
+ .hotel-collection-copy,.hotel-collection-card:nth-child(even) .hotel-collection-copy{padding:27px 0 0}
+ .hotel-collection-copy h2{font-size:clamp(48px,8vw,72px);margin:17px 0}
+ .hotel-collection-copy .hotel-card-angle{font-size:24px}
+ .hotel-card-source{margin-top:23px}
+}
+@media(max-width:520px){
+ .hotel-collection{padding-bottom:75px}
+ .hotel-collection-card,.hotel-collection-card:nth-child(-n+2){padding-bottom:39px}
+ .hotel-collection-photo,.hotel-collection-card:nth-child(-n+2) .hotel-collection-photo{height:350px}
+ .hotel-collection-copy h2{font-size:clamp(42px,10.5vw,57px)}
+ .hotel-collection-copy .hotel-card-angle{font-size:21px}
+ .banya-cover-note{font-size:10px;max-width:330px}
+ .request-form .request-audience{grid-template-columns:1fr}
+ .request-page .request-hero .wrap::after{display:none}
+}
+@media(prefers-reduced-motion:reduce){.button,.header-request,.hotel-collection-photo img{transition:none!important}}
+
+/* Motion sequences load only as they enter the viewport. Posters remain visible otherwise. */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.ambient-film{display:block;position:relative;width:100%;height:100%;min-height:0;overflow:hidden;background-color:#10372e;background-size:cover;background-position:center}
+.ambient-video{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.folio-chapter>.ambient-film,.route-collection-card>.ambient-film{position:absolute;inset:0}
+.folio-chapter>.ambient-film video,.route-collection-card>.ambient-film video{filter:brightness(.77) saturate(.8);transition:transform .7s ease}
+.folio-chapter:hover>.ambient-film video,.route-collection-card:hover>.ambient-film video{transform:scale(1.025)}
+.journey-day-image>.ambient-film{height:100%}
+.partner-cover>.ambient-film{height:580px}
+
+.motion-gallery{padding-top:15px;padding-bottom:135px}
+.motion-gallery-heading{display:grid;grid-template-columns:.5fr 1fr 1fr;gap:4vw;align-items:end;padding-bottom:38px}
+.motion-gallery-heading h2,.ritual-motion h2,.cinema-interlude h2{font-family:'Golos Text',Arial,sans-serif;font-weight:400;letter-spacing:-.06em}
+.motion-gallery-heading h2{font-size:clamp(52px,5vw,85px);line-height:1.08;margin:0}
+.motion-gallery-heading>p:last-child{font-size:15px;line-height:1.75;color:#486357;max-width:430px;margin:0}
+.motion-gallery-grid{display:grid;grid-template-columns:1.15fr .85fr .85fr;gap:15px}
+.motion-gallery-grid figure{margin:0;min-width:0}
+.motion-gallery-grid .ambient-film{height:clamp(390px,37vw,620px)}
+.motion-gallery-grid figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-top:1px solid #a9c2b0;padding-top:15px;margin-top:12px}
+.motion-gallery-grid figcaption span{font-size:10px;font-weight:700;letter-spacing:.16em;color:#438064}
+.motion-gallery-grid figcaption strong{font-family:'Golos Text',Arial,sans-serif;font-size:clamp(24px,2.2vw,39px);font-weight:400;letter-spacing:-.04em}
+
+.ritual-motion{display:grid;grid-template-columns:1.25fr .75fr;gap:15px;background:#0b2e27;padding:15px}
+.ritual-motion-main,.ritual-motion-side{position:relative;min-height:620px;overflow:hidden;color:#fff}
+.ritual-motion-side{min-height:620px}
+.ritual-motion .ambient-film{position:absolute;inset:0}
+.ritual-motion .ambient-film video{filter:brightness(.66) saturate(.77)}
+.ritual-motion-copy{position:absolute;left:0;right:0;bottom:0;padding:100px clamp(25px,5vw,80px) 38px;background:linear-gradient(transparent,rgba(4,30,23,.87))}
+.ritual-motion-copy span,.cinema-interlude-copy span{font-size:10px;font-weight:700;letter-spacing:.17em;color:#e0d19f}
+.ritual-motion h2{font-size:clamp(49px,5vw,89px);line-height:1.06;margin:21px 0 0}
+.ritual-motion-side h2{font-size:clamp(42px,3.7vw,68px)}
+
+.cinema-interlude{position:relative;min-height:680px;height:min(72vw,820px);overflow:hidden;background:#123a2d;color:#f4f4e9}
+.cinema-interlude>.ambient-film{position:absolute;inset:0}
+.cinema-interlude>.ambient-film video{filter:brightness(.58) saturate(.76)}
+.cinema-interlude:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,39,31,.72),rgba(7,39,31,.1) 80%);pointer-events:none}
+.cinema-interlude-copy{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;height:100%;padding-bottom:75px}
+.cinema-interlude h2{font-size:clamp(62px,7vw,124px);line-height:1.04;margin:26px 0}
+.cinema-interlude p{font-size:16px;line-height:1.7;color:#e3ecdf;max-width:550px}
+.hotel-motion{margin-bottom:105px}
+.experience-motion{margin-top:25px;margin-bottom:110px}
+
+.detail-motion{padding-top:20px;padding-bottom:95px}
+.detail-motion>div{height:clamp(390px,49vw,650px);background:#0b3028}
+.detail-motion p{font-size:11px;line-height:1.65;color:#607467;margin:13px 0 0}
+.request-page .request-hero{position:relative;overflow:hidden;isolation:isolate}
+.request-page .request-hero>.ambient-film{position:absolute;inset:0;z-index:-1}
+.request-page .request-hero>.ambient-film:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,29,23,.86),rgba(9,29,23,.53) 66%,rgba(9,29,23,.35))}
+.request-page .request-hero>.ambient-film video{filter:saturate(.7)}
+.ritual-option{min-height:505px}
+.ritual-option-visual{display:block;position:relative;width:100%;height:168px;overflow:hidden;margin-top:18px;pointer-events:none;background:#c3c8b4}
+.ritual-option-visual>.ambient-film{position:absolute;inset:0}
+.ritual-option-visual .ambient-video{filter:saturate(.78);transition:transform .6s ease}
+.ritual-option:hover .ritual-option-visual .ambient-video{transform:scale(1.045)}
+.ritual-option strong{margin-top:22px}
+.ritual-option[aria-pressed="true"] .ritual-option-visual{outline:1px solid #b8d0bd;outline-offset:3px}
+.ritual-option{min-width:0}
+
+@media(max-width:900px){
+ .motion-gallery-heading{display:block}.motion-gallery-heading h2{margin:22px 0;font-size:clamp(47px,8vw,68px)}
+ .motion-gallery-grid{grid-template-columns:1fr 1fr}.motion-gallery-grid figure:first-child{grid-column:1/-1}
+ .motion-gallery-grid .ambient-film{height:440px}
+ .ritual-motion{grid-template-columns:1fr 1fr}.ritual-motion-main,.ritual-motion-side{min-height:540px}
+ .partner-cover>.ambient-film{height:430px;margin-top:40px}
+}
+@media(max-width:600px){
+ .motion-gallery{padding-top:0;padding-bottom:85px}
+ .motion-gallery-grid{display:block}.motion-gallery-grid figure{margin-bottom:27px}.motion-gallery-grid .ambient-film{height:400px}
+ .motion-gallery-grid figcaption strong{font-size:32px}
+ .ritual-motion{display:block;padding:9px}.ritual-motion-main{min-height:550px;margin-bottom:9px}.ritual-motion-side{min-height:420px}
+ .ritual-motion h2{font-size:clamp(49px,10vw,64px)}.ritual-motion-side h2{font-size:47px}
+ .cinema-interlude{min-height:620px;height:78svh}.cinema-interlude-copy{padding-bottom:55px}.cinema-interlude h2{font-size:clamp(52px,10vw,73px)}
+ .detail-motion>div{height:360px}.detail-motion{padding-bottom:70px}
+ .partner-cover>.ambient-film{height:400px}
+ .ritual-option{min-height:455px}.ritual-option-visual{height:180px}
+ .ritual-options{grid-template-columns:1fr}.ritual-option-visual{height:245px}
+}
+@media(prefers-reduced-motion:reduce){.ambient-video{display:none}.folio-chapter>.ambient-film video,.route-collection-card>.ambient-film video{transition:none}}

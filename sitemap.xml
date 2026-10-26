@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://banschik-sochi.ru/</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://banschik-sochi.ru/</loc></url>
+  <url><loc>https://banschik-sochi.ru/banya.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/experiences.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/flight-as350.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/flight-robinson.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/hotel-mantera.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/hotel-marriott.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/hotel-radisson.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/hotel-rixos.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/hotel-rodina.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/hotels.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/journey.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/partners.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/request.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/ritual.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/route-coast.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/route-mountains.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/route-nature.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/routes.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/yacht-oceanis.html</loc></url>
+  <url><loc>https://banschik-sochi.ru/yacht-princess.html</loc></url>
 </urlset>
