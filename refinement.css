@@ -141,3 +141,25 @@
  .ritual-options{grid-template-columns:1fr}.ritual-option-visual{height:245px}
 }
 @media(prefers-reduced-motion:reduce){.ambient-video{display:none}.folio-chapter>.ambient-film video,.route-collection-card>.ambient-film video{transition:none}}
+
+/* A visual menu that belongs to the bath day, not a restaurant catalogue. */
+.cuisine-story{padding:clamp(80px,10vw,150px) 0;background:#dce8db;color:#123b30}
+.cuisine-intro{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.7fr);gap:6vw;align-items:end;margin-bottom:48px}
+.cuisine-intro h2{font-family:'Golos Text',Arial,sans-serif;font-size:clamp(52px,6vw,100px);line-height:1.02;font-weight:400;letter-spacing:-.065em;margin:22px 0 0}
+.cuisine-intro h2 i{font-family:inherit;font-style:normal;color:#477e60}
+.cuisine-intro>p{font-size:16px;line-height:1.8;max-width:430px;margin:0 0 6px;color:#3b5b49}
+.cuisine-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px}
+.cuisine-grid figure{position:relative;min-width:0;min-height:580px;margin:0;background:#183c30;overflow:hidden;color:#fff}
+.cuisine-grid img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.8);transition:transform .7s ease}
+.cuisine-grid figure:hover img{transform:scale(1.035)}
+.cuisine-grid figure:after{content:'';position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(5,24,18,.88));pointer-events:none}
+.cuisine-grid figcaption{position:absolute;z-index:1;left:clamp(22px,3vw,45px);right:clamp(22px,3vw,45px);bottom:clamp(24px,3vw,45px)}
+.cuisine-grid figcaption span{display:block;color:#e4d4a7;font-size:10px;font-weight:700;letter-spacing:.17em}
+.cuisine-grid figcaption strong{display:block;font-family:'Golos Text',Arial,sans-serif;font-size:clamp(33px,3.2vw,54px);line-height:1.05;font-weight:400;letter-spacing:-.045em;margin:17px 0}
+.cuisine-grid figcaption p{font-size:14px;line-height:1.65;max-width:300px;margin:0;color:#e3e9de}
+.cuisine-footer{display:grid;grid-template-columns:1fr auto;gap:17px 40px;align-items:center;padding-top:36px}
+.cuisine-footer p{font-size:17px;line-height:1.65;max-width:640px;margin:0}
+.cuisine-footer small{grid-column:1/-1;color:#50705a;font-size:11px}
+.media-fallback-label{position:absolute;z-index:3;right:13px;bottom:13px;background:rgba(8,39,29,.84);color:#f2f0e3;padding:6px 9px;font-size:10px;letter-spacing:.07em;pointer-events:none}
+@media(max-width:900px){.cuisine-intro{grid-template-columns:1fr}.cuisine-grid{grid-template-columns:1fr 1fr}.cuisine-grid .cuisine-feature{grid-column:1/-1}.cuisine-grid figure{min-height:500px}.cuisine-grid .cuisine-feature{min-height:560px}}
+@media(max-width:600px){.cuisine-story{padding:78px 0}.cuisine-intro{gap:24px;margin-bottom:32px}.cuisine-intro h2{font-size:clamp(47px,12vw,70px)}.cuisine-intro>p{font-size:15px}.cuisine-grid{display:block}.cuisine-grid figure,.cuisine-grid .cuisine-feature{min-height:0;height:500px;margin-bottom:10px}.cuisine-grid figcaption strong{font-size:42px}.cuisine-footer{display:block;padding-top:24px}.cuisine-footer p{font-size:15px}.cuisine-footer .button{margin:22px 0}.cuisine-footer small{display:block;line-height:1.5}}
