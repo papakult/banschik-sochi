@@ -236,7 +236,7 @@
   const buildText = () => {
     const d = new FormData(form);
     const included = [d.has('banya') && 'баня с мастером', d.has('spa') && 'массаж и SPA-ритуалы', d.has('stay') && 'размещение', d.has('routes') && 'поездки по Сочи', d.has('transfer') && 'трансфер'].filter(Boolean);
-    return ['Запрос на частную поездку в Сочи', `Кто обращается: ${d.get('audience') || 'гость'}`, `Даты: ${d.get('dates') || 'уточним'}`, `Гостей: ${d.get('guests') || 'уточним'}`, `Длительность: ${d.get('duration')}`, `В программе: ${included.join(', ') || 'обсудим'}`, `Проживание: ${d.get('hotel') || 'подобрать варианты'}`, `Яхта или полет: ${d.get('experience') || 'не выбрали'}`, `Процедуры для обсуждения: ${d.get('ritual') || 'подобрать с мастером'}`, `Исключить из парения и ухода: ${d.get('avoid') || 'уточним'}`, `Пожелания: ${d.get('notes') || 'уточним'}`].join('\n');
+    return ['Запрос на частную поездку в Сочи', `Кто обращается: ${d.get('audience') || 'гость'}`, `Даты: ${d.get('dates') || 'уточним'}`, `Гостей: ${d.get('guests') || 'уточним'}`, `Длительность: ${d.get('duration')}`, `В программе: ${included.join(', ') || 'обсудим'}`, `Проживание: ${d.get('hotel') || 'подобрать варианты'}`, `Яхта или полет: ${d.get('experience') || 'не выбрали'}`, `Кухня: ${d.get('cuisine') || 'подобрать вместе'}`, `Процедуры для обсуждения: ${d.get('ritual') || 'подобрать с мастером'}`, `Исключить из парения и ухода: ${d.get('avoid') || 'уточним'}`, `Пожелания: ${d.get('notes') || 'уточним'}`].join('\n');
   };
   document.getElementById('copy-request')?.addEventListener('click', async () => {
     try { await navigator.clipboard.writeText(buildText()); status.textContent = 'Запрос скопирован. Теперь его можно отправить партнеру или организатору.'; }
