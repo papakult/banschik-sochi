@@ -1107,6 +1107,20 @@ body{background:var(--ed-paper);color:var(--ed-ink)}
 }
 @media(prefers-reduced-motion:reduce){.ambient-video{display:none}.folio-chapter>.ambient-film video,.route-collection-card>.ambient-film video{transition:none}}
 
+/* Sochi route gallery */
+.route-visuals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;height:570px}
+.route-visual{position:relative;overflow:hidden;background:#153f36;color:#fff}
+.route-visual img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.route-visual:hover img{transform:scale(1.045)}
+.route-visual::after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(3,25,20,.58))}
+.route-visual span{position:absolute;z-index:1;left:24px;bottom:25px;font-size:clamp(22px,2vw,34px);font-weight:500;letter-spacing:-.04em}
+.route-visual-coast img{object-position:58% center}
+.route-visual-mountains img{object-position:55% center}
+@media(max-width:1050px){.route-visuals{height:530px}}
+@media(max-width:780px){.route-visuals{height:520px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:1.25fr 1fr;gap:8px}.route-visual-coast{grid-column:1/-1}.route-visual span{left:18px;bottom:18px;font-size:27px}}
+@media(max-width:520px){.route-visuals{height:430px}.route-visual span{font-size:23px}}
+@media(prefers-reduced-motion:reduce){.route-visual img{transition:none}}
+
 /* A visual menu that belongs to the bath day, not a restaurant catalogue. */
 .cuisine-story{padding:clamp(80px,10vw,150px) 0;background:#dce8db;color:#123b30}
 .cuisine-intro{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.7fr);gap:6vw;align-items:end;margin-bottom:48px}

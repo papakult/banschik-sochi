@@ -65,7 +65,7 @@
   const syncFilm = film => {
     const video = film.querySelector('video');
     const button = film.querySelector('.film-toggle');
-    if (!video || (!button && !film.matches('.banya-cover-film, .master-gallery-film'))) return;
+    if (!video || (!button && !film.matches('.banya-cover-film, .master-gallery-film, .route-cover-film'))) return;
     const waitingForTap = button && mobileHero(film) && !userStarted.has(film);
     if (document.hidden || !inViewport(film) || userPaused.has(film) || reducedMotion || waitingForTap) {
       video.pause();
