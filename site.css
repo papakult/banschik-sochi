@@ -1133,3 +1133,23 @@ body{background:var(--ed-paper);color:var(--ed-ink)}
 .ambient-film>.ambient-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .folio-chapters .ambient-video{position:relative;z-index:1;opacity:0;transition:opacity .45s ease,transform .7s ease}
 .folio-chapters .ambient-video.is-ready{opacity:1}
+
+/* Keep editorial copy above the moving image on every screen. */
+.folio-chapter>.ambient-film{z-index:0}
+.folio-chapter>.chapter-shade{z-index:1;pointer-events:none}
+.folio-chapter>.chapter-content{z-index:2;text-shadow:0 1px 18px rgba(0,0,0,.25)}
+
+/* The yacht plays inside the sea section, while its still remains available. */
+.extra-home>a>.ambient-film{position:absolute;inset:0;width:100%;height:100%;min-height:0;padding:0;background:none}
+.extra-home>a>.ambient-film .ambient-poster,.extra-home>a>.ambient-film .ambient-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.82)}
+.extra-home>a>.ambient-film .ambient-video{z-index:1;opacity:0;transition:opacity .45s ease}
+.extra-home>a>.ambient-film .ambient-video.is-ready{opacity:1}
+.extra-home>a>span:last-child{z-index:2}
+
+/* A quieter, custom direction control for the itinerary. */
+.journey-link{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-width:266px;padding:9px 9px 9px 23px;border:1px solid #a9bfb0;background:#e4ece2;color:#153b2d;font-size:13px;font-weight:600;letter-spacing:.01em;transition:background .25s,border-color .25s,transform .25s}
+.journey-link:hover{background:#d4e3d6;border-color:#5d8a6e;transform:translateY(-2px)}
+.journey-link-icon{display:grid;place-items:center;width:45px;height:45px;background:#1b523e;color:#f3f1de;clip-path:polygon(0 0,78% 0,100% 22%,100% 100%,22% 100%,0 78%)}
+.journey-link-icon svg{width:22px;height:22px}
+.journey-link:focus-visible{outline:2px solid #1b523e;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.journey-link,.extra-home>a>.ambient-film .ambient-video{transition:none}}

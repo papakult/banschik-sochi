@@ -39,7 +39,7 @@
     ambientVideos.forEach(syncAmbientVideo);
   }
   document.addEventListener('visibilitychange', () => ambientVideos.forEach(syncAmbientVideo));
-  document.querySelectorAll('.folio-chapters .ambient-video').forEach(video => {
+  document.querySelectorAll('.folio-chapters .ambient-video, .extra-home .ambient-video').forEach(video => {
     video.addEventListener('loadeddata', () => video.classList.add('is-ready'), { once: true });
   });
   const films = Array.from(document.querySelectorAll('.film'));
