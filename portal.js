@@ -32,6 +32,8 @@
   document.addEventListener('visibilitychange', () => ambientVideos.forEach(syncAmbientVideo));
   const films = Array.from(document.querySelectorAll('.film'));
   const userPaused = new WeakSet();
+  const userStarted = new WeakSet();
+  const mobileHero = film => window.matchMedia('(max-width: 780px)').matches && film.matches('.home-film, .banya-cover-film');
   const setFilmControl = (button, paused) => {
     button.querySelector('.pause-icon').textContent = paused ? '▶' : 'Ⅱ';
     button.setAttribute('aria-label', paused ? 'Воспроизвести видео' : 'Остановить видео');
@@ -52,9 +54,9 @@
     const video = film.querySelector('video');
     const button = film.querySelector('.film-toggle');
     if (!video || !button) return;
-    if (document.hidden || !inViewport(film) || userPaused.has(film) || reducedMotion) {
+    if (document.hidden || !inViewport(film) || userPaused.has(film) || reducedMotion || (mobileHero(film) && !userStarted.has(film))) {
       video.pause();
-      if (userPaused.has(film) || reducedMotion) setFilmControl(button, true);
+      if (userPaused.has(film) || reducedMotion || (mobileHero(film) && !userStarted.has(film))) setFilmControl(button, true);
       return;
     }
     loadFilm(video);
@@ -67,6 +69,7 @@
     button.addEventListener('click', () => {
       if (video.paused) {
         userPaused.delete(film);
+        userStarted.add(film);
         loadFilm(video);
         video.play().then(() => setFilmControl(button, video.paused)).catch(() => setFilmControl(button, true));
       } else {
@@ -235,8 +238,8 @@
   const status = document.getElementById('form-status');
   const buildText = () => {
     const d = new FormData(form);
-    const included = [d.has('banya') && 'баня с мастером', d.has('spa') && 'массаж и SPA-ритуалы', d.has('stay') && 'размещение', d.has('routes') && 'поездки по Сочи', d.has('transfer') && 'трансфер'].filter(Boolean);
-    return ['Запрос на частную поездку в Сочи', `Кто обращается: ${d.get('audience') || 'гость'}`, `Даты: ${d.get('dates') || 'уточним'}`, `Гостей: ${d.get('guests') || 'уточним'}`, `Длительность: ${d.get('duration')}`, `В программе: ${included.join(', ') || 'обсудим'}`, `Проживание: ${d.get('hotel') || 'подобрать варианты'}`, `Яхта или полет: ${d.get('experience') || 'не выбрали'}`, `Кухня: ${d.get('cuisine') || 'подобрать вместе'}`, `Процедуры для обсуждения: ${d.get('ritual') || 'подобрать с мастером'}`, `Исключить из парения и ухода: ${d.get('avoid') || 'уточним'}`, `Пожелания: ${d.get('notes') || 'уточним'}`].join('\n');
+    const included = [d.has('banya') && 'баня с пармастером', d.has('spa') && 'массаж и SPA-ритуалы', d.has('stay') && 'размещение', d.has('routes') && 'поездки по Сочи', d.has('transfer') && 'трансфер'].filter(Boolean);
+    return ['Запрос на частную поездку в Сочи', `Кто обращается: ${d.get('audience') || 'гость'}`, `Даты: ${d.get('dates') || 'уточним'}`, `Гостей: ${d.get('guests') || 'уточним'}`, `Длительность: ${d.get('duration')}`, `В программе: ${included.join(', ') || 'обсудим'}`, `Проживание: ${d.get('hotel') || 'подобрать варианты'}`, `Яхта или полет: ${d.get('experience') || 'не выбрали'}`, `Кухня: ${d.get('cuisine') || 'подобрать вместе'}`, `Процедуры для обсуждения: ${d.get('ritual') || 'подобрать с пармастером'}`, `Исключить из парения и ухода: ${d.get('avoid') || 'уточним'}`, `Пожелания: ${d.get('notes') || 'уточним'}`].join('\n');
   };
   document.getElementById('copy-request')?.addEventListener('click', async () => {
     try { await navigator.clipboard.writeText(buildText()); status.textContent = 'Запрос скопирован. Теперь его можно отправить партнеру или организатору.'; }
