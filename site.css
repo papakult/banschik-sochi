@@ -1161,3 +1161,16 @@ body{background:var(--ed-paper);color:var(--ed-ink)}
 .editorial-link:focus-visible{outline:2px solid #2b674e;outline-offset:5px}
 .extra-home .editorial-link{min-width:255px;border-color:#8cae94;font-size:14px}
 @media(prefers-reduced-motion:reduce){.editorial-link .link-mark{transition:none}}
+
+/* One bath scene fills the gallery after the duplicate frame is removed. */
+.banya-gallery-single{grid-template-columns:1fr;gap:0}
+.banya-gallery-single .banya-gallery-head,.banya-gallery-single .banya-gallery-side{grid-column:1}
+.banya-gallery-single .banya-gallery-side .film{height:clamp(430px,53vw,700px)}
+@media(max-width:780px){.banya-gallery-single .banya-gallery-side .film{height:440px}}
+@media(max-width:520px){.banya-gallery-single .banya-gallery-side .film{height:330px}}
+
+/* Let the hotel scene breathe without a slogan over the footage. */
+.hotel-motion{min-height:420px;height:clamp(420px,48vw,620px)}
+.hotel-motion .cinema-interlude-copy{padding-bottom:40px}
+.hotel-motion .cinema-interlude-copy p{margin:0;max-width:500px;font-size:15px}
+@media(max-width:780px){.hotel-motion{height:440px;min-height:0}.hotel-motion .cinema-interlude-copy{padding-bottom:26px}}
