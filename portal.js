@@ -10,10 +10,19 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const ambientVideos = Array.from(document.querySelectorAll('.ambient-video'));
   const syncAmbientVideo = video => {
-    if (reducedMotion || document.hidden) { video.pause(); return; }
     const bounds = video.getBoundingClientRect();
     const visible = bounds.bottom > 0 && bounds.top < window.innerHeight && bounds.right > 0 && bounds.left < window.innerWidth;
     if (!visible) { video.pause(); return; }
+    const image = video.parentElement.querySelector('.ambient-poster[data-src]');
+    if (image) {
+      image.src = image.dataset.src;
+      delete image.dataset.src;
+    }
+    if (video.dataset.poster) {
+      video.poster = video.dataset.poster;
+      delete video.dataset.poster;
+    }
+    if (reducedMotion || document.hidden) { video.pause(); return; }
     const source = video.querySelector('source[data-src]');
     if (source) {
       source.src = source.dataset.src;
@@ -30,6 +39,9 @@
     ambientVideos.forEach(syncAmbientVideo);
   }
   document.addEventListener('visibilitychange', () => ambientVideos.forEach(syncAmbientVideo));
+  document.querySelectorAll('.folio-chapters .ambient-video').forEach(video => {
+    video.addEventListener('loadeddata', () => video.classList.add('is-ready'), { once: true });
+  });
   const films = Array.from(document.querySelectorAll('.film'));
   const userPaused = new WeakSet();
   const userStarted = new WeakSet();

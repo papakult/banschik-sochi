@@ -1129,3 +1129,7 @@ body{background:var(--ed-paper);color:var(--ed-ink)}
 @media(max-width:900px){.cuisine-intro{grid-template-columns:1fr}.cuisine-grid{grid-template-columns:1fr 1fr}.cuisine-grid .cuisine-feature{grid-column:1/-1}.cuisine-grid figure{min-height:500px}.cuisine-grid .cuisine-feature{min-height:560px}}
 @media(max-width:600px){.cuisine-story{padding:78px 0}.cuisine-intro{gap:24px;margin-bottom:32px}.cuisine-intro h2{font-size:clamp(47px,12vw,70px)}.cuisine-intro>p{font-size:15px}.cuisine-grid{display:block}.cuisine-grid figure,.cuisine-grid .cuisine-feature{min-height:0;height:500px;margin-bottom:10px}.cuisine-grid figcaption strong{font-size:42px}.cuisine-footer{display:block;padding-top:24px}.cuisine-footer p{font-size:15px}.cuisine-footer .button{margin:22px 0}.cuisine-footer small{display:block;line-height:1.5}}
 
+
+.ambient-film>.ambient-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.folio-chapters .ambient-video{position:relative;z-index:1;opacity:0;transition:opacity .45s ease,transform .7s ease}
+.folio-chapters .ambient-video.is-ready{opacity:1}
