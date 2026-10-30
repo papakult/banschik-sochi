@@ -65,14 +65,19 @@
   const syncFilm = film => {
     const video = film.querySelector('video');
     const button = film.querySelector('.film-toggle');
-    if (!video || !button) return;
-    if (document.hidden || !inViewport(film) || userPaused.has(film) || reducedMotion || (mobileHero(film) && !userStarted.has(film))) {
+    if (!video || (!button && !film.matches('.banya-cover-film, .master-gallery-film'))) return;
+    const waitingForTap = button && mobileHero(film) && !userStarted.has(film);
+    if (document.hidden || !inViewport(film) || userPaused.has(film) || reducedMotion || waitingForTap) {
       video.pause();
-      if (userPaused.has(film) || reducedMotion || (mobileHero(film) && !userStarted.has(film))) setFilmControl(button, true);
+      if (button && (userPaused.has(film) || reducedMotion || waitingForTap)) setFilmControl(button, true);
       return;
     }
     loadFilm(video);
-    video.play().then(() => setFilmControl(button, video.paused)).catch(() => setFilmControl(button, true));
+    video.play().then(() => {
+      if (button) setFilmControl(button, video.paused);
+    }).catch(() => {
+      if (button) setFilmControl(button, true);
+    });
   };
   films.forEach(film => {
     const video = film.querySelector('video');

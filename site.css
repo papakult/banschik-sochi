@@ -1144,7 +1144,6 @@ body{background:var(--ed-paper);color:var(--ed-ink)}
 .extra-home>a>.ambient-film .ambient-poster,.extra-home>a>.ambient-film .ambient-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.82)}
 .extra-home>a>.ambient-film .ambient-video{z-index:1;opacity:0;transition:opacity .45s ease}
 .extra-home>a>.ambient-film .ambient-video.is-ready{opacity:1}
-.extra-home>a>span:last-child{z-index:2}
 
 /* A quieter, custom direction control for the itinerary. */
 .journey-link{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-width:266px;padding:9px 9px 9px 23px;border:1px solid #a9bfb0;background:#e4ece2;color:#153b2d;font-size:13px;font-weight:600;letter-spacing:.01em;transition:background .25s,border-color .25s,transform .25s}
@@ -1153,3 +1152,12 @@ body{background:var(--ed-paper);color:var(--ed-ink)}
 .journey-link-icon svg{width:22px;height:22px}
 .journey-link:focus-visible{outline:2px solid #1b523e;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.journey-link,.extra-home>a>.ambient-film .ambient-video{transition:none}}
+
+/* A faceted jade direction mark replaces the plain text arrow. */
+.editorial-link .link-mark{position:relative;display:grid;place-items:center;flex:none;width:42px;height:42px;margin:-8px 0 -6px;padding:0;border:1px solid rgba(246,238,202,.5);background:linear-gradient(135deg,#427863 0%,#1d523f 43%,#0e352b 100%);color:#f6efd8;clip-path:polygon(0 0,75% 0,100% 25%,100% 100%,25% 100%,0 75%);box-shadow:inset 0 1px 0 rgba(255,255,255,.35);transition:filter .25s,transform .25s}
+.editorial-link .link-mark:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.24),transparent 42%,rgba(0,0,0,.14) 75%);pointer-events:none}
+.editorial-link .link-mark svg{position:relative;width:20px;height:20px}
+.editorial-link:hover .link-mark{filter:brightness(1.12);transform:translate(2px,-2px)}
+.editorial-link:focus-visible{outline:2px solid #2b674e;outline-offset:5px}
+.extra-home .editorial-link{min-width:255px;border-color:#8cae94;font-size:14px}
+@media(prefers-reduced-motion:reduce){.editorial-link .link-mark{transition:none}}
