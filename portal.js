@@ -65,7 +65,7 @@
   const syncFilm = film => {
     const video = film.querySelector('video');
     const button = film.querySelector('.film-toggle');
-    if (!video || (!button && !film.matches('.banya-cover-film, .master-gallery-film, .route-cover-film'))) return;
+    if (!video || (!button && !film.matches('.home-film, .banya-cover-film, .master-gallery-film, .route-cover-film'))) return;
     const waitingForTap = button && mobileHero(film) && !userStarted.has(film);
     if (document.hidden || !inViewport(film) || userPaused.has(film) || reducedMotion || waitingForTap) {
       video.pause();
@@ -255,8 +255,8 @@
   const status = document.getElementById('form-status');
   const buildText = () => {
     const d = new FormData(form);
-    const included = [d.has('banya') && 'баня с пармастером', d.has('spa') && 'массаж и SPA-ритуалы', d.has('stay') && 'размещение', d.has('routes') && 'поездки по Сочи', d.has('transfer') && 'трансфер'].filter(Boolean);
-    return ['Запрос на частную поездку в Сочи', `Кто обращается: ${d.get('audience') || 'гость'}`, `Даты: ${d.get('dates') || 'уточним'}`, `Гостей: ${d.get('guests') || 'уточним'}`, `Длительность: ${d.get('duration')}`, `В программе: ${included.join(', ') || 'обсудим'}`, `Проживание: ${d.get('hotel') || 'подобрать варианты'}`, `Яхта или полет: ${d.get('experience') || 'не выбрали'}`, `Кухня: ${d.get('cuisine') || 'подобрать вместе'}`, `Процедуры для обсуждения: ${d.get('ritual') || 'подобрать с пармастером'}`, `Исключить из парения и ухода: ${d.get('avoid') || 'уточним'}`, `Пожелания: ${d.get('notes') || 'уточним'}`].join('\n');
+    const included = [d.has('banya') && 'парение с пармастером', d.has('spa') && 'массаж и уход', d.has('dinner') && 'ужин после парной'].filter(Boolean);
+    return ['Запрос на банный день в Сочи', `Кто обращается: ${d.get('audience') || 'гость'}`, `Дата: ${d.get('dates') || 'уточним'}`, `Гостей: ${d.get('guests') || 'уточним'}`, `В программе: ${included.join(', ') || 'обсудим'}`, `Кухня: ${d.get('cuisine') || 'подобрать вместе'}`, `Напитки: ${d.get('drinks') || 'обсудим'}`, `Процедуры для обсуждения: ${d.get('ritual') || 'подобрать с пармастером'}`, `Исключить из парения и ухода: ${d.get('avoid') || 'уточним'}`, `Пожелания: ${d.get('notes') || 'уточним'}`].join('\n');
   };
   document.getElementById('copy-request')?.addEventListener('click', async () => {
     try { await navigator.clipboard.writeText(buildText()); status.textContent = 'Запрос скопирован. Теперь его можно отправить партнеру или организатору.'; }
@@ -264,7 +264,7 @@
   });
   document.getElementById('share-request')?.addEventListener('click', async () => {
     if (!navigator.share) { status.textContent = 'В этом браузере нет меню Поделиться. Скопируйте текст запроса.'; return; }
-    try { await navigator.share({ title: 'Поездка в Сочи', text: buildText() }); status.textContent = 'Меню отправки открыто.'; }
+    try { await navigator.share({ title: 'Банный день в Сочи', text: buildText() }); status.textContent = 'Меню отправки открыто.'; }
     catch { status.textContent = 'Отправка отменена.'; }
   });
 })();
