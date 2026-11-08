@@ -1,11 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Банщик Сочи">
-  <defs>
-    <linearGradient id="jade" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#1b6448"/>
-      <stop offset="1" stop-color="#0b342b"/>
-    </linearGradient>
-  </defs>
-  <path d="M5 4h45l9 9v38l-9 9H5z" fill="url(#jade)"/>
-  <path d="M7 6h42l8 8v36l-8 8H7z" fill="none" stroke="#d8c99a" stroke-width="1.5"/>
-  <text x="32" y="41" fill="#f4f1e8" font-family="Arial,sans-serif" font-size="24" font-weight="600" letter-spacing="-3" text-anchor="middle">БС</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <rect width="48" height="48" rx="10" fill="#1b1814"/>
+  <g fill="none" stroke="#d8b281" stroke-width="1.7" stroke-linecap="round">
+    <circle cx="24" cy="24" r="19"/>
+    <path d="M14 33h20M18 28c-4-5 5-8 1-14m5 14c-5-6 6-10 1-17m5 17c-4-5 5-8 1-14"/>
+  </g>
 </svg>
