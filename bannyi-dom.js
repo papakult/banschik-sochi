@@ -83,9 +83,6 @@ if (requestForm) {
   const procedures = params.getAll('procedure');
   if (procedures.length || params.get('from') === 'procedures') {
     ritual.value = procedures.slice(0, 8).join(', ').slice(0, 1200);
-    requestForm.elements.spa.checked = procedures.some((name) =>
-      ['Расслабляющий массаж', 'Солево-медовый пилинг', 'Банная мойка', 'Травяная ванночка для ног'].includes(name)
-    );
   } else {
     try {
       ritual.value = localStorage.getItem('private-sochi-ritual') || '';
@@ -94,6 +91,10 @@ if (requestForm) {
     }
   }
   if (params.get('for') === 'partner') requestForm.elements.audience.value = 'Партнер';
+
+  const departure = requestForm.elements.departure;
+  const flightDay = params.get('departure');
+  if (flightDay === 'sunday' || flightDay === 'monday') departure.value = flightDay;
 
   const result = document.getElementById('request-result');
   const requestText = document.getElementById('request-text');
@@ -107,14 +108,17 @@ if (requestForm) {
     const value = (key) => (data.get(key) || '').trim();
     const options = [
       data.has('banya') && 'парение с пармастером',
-      data.has('spa') && 'массаж и уход',
-      data.has('dinner') && 'ужин после парной',
+      data.has('spa') && 'массаж и банные процедуры',
+      data.has('dinner') && 'кухня и напитки под заказ',
     ].filter(Boolean);
     return [
-      'Запрос на частный банный день в Сочи',
+      'Запрос на частный банный уикенд в Сочи',
       'Кто обращается: ' + value('audience'),
-      value('dates') && 'Дата: ' + value('dates'),
+      value('dates') && 'Даты уикенда: ' + value('dates'),
       value('guests') && 'Гостей: ' + value('guests'),
+      value('departure') && 'Обратный вылет: ' + departure.selectedOptions[0].textContent,
+      value('hotel') && 'Гостиница: ' + value('hotel'),
+      value('flights') && 'Рейсы и время: ' + value('flights'),
       options.length && 'В программе: ' + options.join(', '),
       value('ritual') && 'Процедуры и парение: ' + value('ritual'),
       value('cuisine') && 'Кухня: ' + value('cuisine'),
@@ -148,7 +152,7 @@ if (requestForm) {
   });
   share.addEventListener('click', async () => {
     try {
-      await navigator.share({ title: 'Банный день в Сочи', text: requestText.value });
+      await navigator.share({ title: 'Банный уикенд в Сочи', text: requestText.value });
     } catch (error) {
       if (error.name !== 'AbortError') status.textContent = 'Не удалось открыть меню. Скопируйте текст запроса.';
     }

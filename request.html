@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#191611">
-  <title>Обсудить частный банный день | Банщик Сочи</title>
-  <meta name="description" content="Подготовьте запрос на частную баню в Сочи. Укажите дату, гостей, пожелания к парению, массажу, кухне и напиткам.">
-  <meta property="og:title" content="Обсудить частный банный день | Банщик Сочи">
-  <meta property="og:description" content="Подготовьте запрос на частную баню в Сочи. Укажите дату, гостей, пожелания к парению, массажу, кухне и напиткам.">
+  <title>Обсудить частный банный уикенд | Банщик Сочи</title>
+  <meta name="description" content="Подготовьте запрос на двухдневный банный тур в Сочи. Укажите даты, время обратного вылета и пожелания к гостинице, парению, массажу и меню.">
+  <meta property="og:title" content="Обсудить частный банный уикенд | Банщик Сочи">
+  <meta property="og:description" content="Подготовьте запрос на двухдневный банный тур в Сочи. Укажите даты, время обратного вылета и пожелания к гостинице, парению, массажу и меню.">
   <meta property="og:image" content="https://banschik-sochi.ru/assets/ritual-editorial.webp">
   <meta property="og:url" content="https://banschik-sochi.ru/request.html">
   <link rel="canonical" href="https://banschik-sochi.ru/request.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="bannyi-dom.css">
-  <script src="bannyi-dom.js" defer></script>
+  <link rel="stylesheet" href="bannyi-dom.css?v=weekend">
+  <script src="bannyi-dom.js?v=weekend" defer></script>
 </head>
 <body class="inner">
 <a class="skip" href="#main">К содержанию</a>
@@ -22,9 +22,9 @@
     <a class="brand" href="./" aria-label="Банщик Сочи, главная"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="1" y="1" width="46" height="46" rx="23"/><path d="M14 33h20M18 28c-4-5 5-8 1-14m5 14c-5-6 6-10 1-17m5 17c-4-5 5-8 1-14"/></svg><span>БАНЩИК<small>СОЧИ</small></span></a>
     <details class="mobile-nav">
       <summary>Меню</summary>
-      <nav aria-label="Мобильное меню"><a href="banya.html">Банный день</a><a href="ritual.html">Массаж и процедуры</a><a href="cuisine.html">Кухня и напитки</a><a href="request.html">Обсудить день</a></nav>
+      <nav aria-label="Мобильное меню"><a href="./#evening">Уикенд</a><a href="banya.html">Парение</a><a href="ritual.html">Массаж и процедуры</a><a href="cuisine.html">Кухня и напитки</a><a href="request.html">Обсудить уикенд</a></nav>
     </details>
-    <nav class="desktop-nav" aria-label="Основное меню"><a href="banya.html">Банный день</a><a href="ritual.html">Массаж и процедуры</a><a href="cuisine.html">Кухня и напитки</a></nav>
+    <nav class="desktop-nav" aria-label="Основное меню"><a href="./#evening">Уикенд</a><a href="banya.html">Парение</a><a href="ritual.html">Массаж и процедуры</a><a href="cuisine.html">Кухня и напитки</a></nav>
     <a class="header-link" href="request.html">Частный запрос <span aria-hidden="true">↗</span></a>
   </div>
 </header>
@@ -33,8 +33,8 @@
   <img src="assets/ritual-editorial.webp" alt="" fetchpriority="high" decoding="async">
   <div class="wrap cover-copy">
     <p class="eyebrow">ЧАСТНЫЙ ЗАПРОС</p>
-    <h1>Ваш банный<br><em>день в Сочи</em></h1>
-    <p class="cover-lead">Расскажите о дате, гостях и пожеланиях. Площадку, состав программы, меню и стоимость согласуем до бронирования.</p>
+    <h1>Ваш банный<br><em>уикенд в Сочи</em></h1>
+    <p class="cover-lead">Согласуем гостиницу, поездки, программу двух банных дней и меню. Стоимость уточним после разговора.</p>
 
   </div>
 
@@ -42,7 +42,7 @@
   <aside class="booking-aside">
     <p class="eyebrow">ПЕРВЫЙ РАЗГОВОР</p>
     <h2>Начнем <em>с деталей</em></h2>
-    <p>Если вы организуете день для компании, укажите число гостей и пожелания к парению, массажу и столу. Можно заполнить только то, что уже известно.</p>
+    <p>Укажите удобные даты и число гостей. Если билеты уже есть, можно добавить время рейсов. Остальные детали обсудим вместе.</p>
     <p>Сайт соберет текст для организатора. Вы сможете скопировать его или отправить через удобное приложение.</p>
   </aside>
   <form id="request-form" method="post">
@@ -51,13 +51,18 @@
       <label class="choice"><input type="radio" name="audience" value="Партнер"> Партнер</label>
     </fieldset>
     <div class="field-grid">
-      <label>Дата или период<input name="dates" type="text" placeholder="Например, вторая половина мая" maxlength="120"></label>
+      <label>Даты уикенда<input name="dates" type="text" placeholder="Например, 14–16 мая" maxlength="120"></label>
       <label>Число гостей<input name="guests" type="number" min="1" max="30" inputmode="numeric" placeholder="2"></label>
     </div>
-    <fieldset class="choices"><legend>Что включить</legend>
+    <div class="field-grid">
+      <label>Обратный вылет<select name="departure"><option value="">Еще не решили</option><option value="sunday">В воскресенье вечером</option><option value="monday">В понедельник утром</option></select></label>
+      <label>Гостиница<input name="hotel" type="text" placeholder="Уже выбрана или нужна помощь с подбором" maxlength="250"></label>
+    </div>
+    <label>Рейсы и время прилета или вылета<input name="flights" type="text" placeholder="Если уже знаете" maxlength="250"></label>
+    <fieldset class="choices"><legend>Что включить в банную программу</legend>
       <label class="choice"><input type="checkbox" name="banya" checked> Парение</label>
-      <label class="choice"><input type="checkbox" name="spa"> Массаж и уход</label>
-      <label class="choice"><input type="checkbox" name="dinner" checked> Ужин</label>
+      <label class="choice"><input type="checkbox" name="spa" checked> Массаж и процедуры</label>
+      <label class="choice"><input type="checkbox" name="dinner" checked> Кухня и напитки</label>
     </fieldset>
     <label>Процедуры и пожелания к парению<textarea name="ritual" rows="2" placeholder="Желаемая температура, веники, массаж" maxlength="1200"></textarea></label>
     <a class="text-link form-link" href="ritual.html">Посмотреть все процедуры <span aria-hidden="true">↗</span></a>
@@ -66,7 +71,7 @@
       <label>Напитки<input name="drinks" type="text" placeholder="Чай, морс или ваш выбор" maxlength="250"></label>
     </div>
     <label>Что исключить<textarea name="avoid" rows="2" placeholder="Например, мед, отдельные продукты или холодное обливание" maxlength="1200"></textarea></label>
-    <label>Другие пожелания<textarea name="notes" rows="2" placeholder="Время начала, повод, любимые блюда" maxlength="1200"></textarea></label>
+    <label>Другие пожелания<textarea name="notes" rows="2" placeholder="Например, разное меню на субботу и воскресенье" maxlength="1200"></textarea></label>
     <noscript><p>Для подготовки текста запроса включите JavaScript.</p></noscript>
     <div class="form-actions" hidden>
       <button class="button" type="submit">Подготовить запрос</button>
@@ -82,9 +87,9 @@
 <footer class="footer">
   <div class="wrap footer-main">
     <a class="brand" href="./" aria-label="Банщик Сочи, главная"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="1" y="1" width="46" height="46" rx="23"/><path d="M14 33h20M18 28c-4-5 5-8 1-14m5 14c-5-6 6-10 1-17m5 17c-4-5 5-8 1-14"/></svg><span>БАНЩИК<small>СОЧИ</small></span></a>
-    <nav aria-label="Разделы сайта"><a href="banya.html">Банный день</a><a href="ritual.html">Массаж и процедуры</a><a href="cuisine.html">Кухня и напитки</a><a href="request.html">Частный запрос</a></nav>
+    <nav aria-label="Разделы сайта"><a href="./#evening">Уикенд</a><a href="banya.html">Парение</a><a href="ritual.html">Массаж и процедуры</a><a href="cuisine.html">Кухня и напитки</a><a href="request.html">Частный запрос</a></nav>
   </div>
-  <div class="wrap footer-end"><span>Частный банный день в Сочи</span><span>Фото и видео передают атмосферу. Площадку и меню согласуем до бронирования.</span></div>
+  <div class="wrap footer-end"><span>Частный банный уикенд в Сочи</span><span>Фото и видео передают атмосферу. Гостиницу, площадку и меню согласуем до бронирования.</span></div>
 </footer>
 </body>
 </html>
